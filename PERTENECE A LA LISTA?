@@ -1,0 +1,35 @@
+// Nombre: Noelia Vigano
+// Tp nro:6
+/* Ej nro 2:Hacer un programa donde se carguen 15 números enteros y luego le solicite al usuario un número e indique
+ si el mismo pertenece a la lista cargada anteriormente.
+
+*/
+
+#include <iostream>
+using namespace std;
+int main (){
+   int const TAM=15;
+int vect[TAM]={};
+int nro,i;
+int cont=0;
+cout<<"ingrese 15 numeros"<<endl;
+for(i=0;i<TAM;i++){
+    cin>>vect[i];
+    }
+cout<<"ingrese un numero a evaluar en la lista "<<endl;
+cin>>nro;
+
+for(i=0;i<TAM;i++){
+if(nro==vect[i]){
+        cont++;
+}
+}
+if(cont==0){
+    cout<<"el numero no esta en la lista";
+}
+else{
+    cout<<"el numero esta en la lista"<<endl;
+}
+return 0;
+
+}
