@@ -1,0 +1,68 @@
+// Nombre: Noelia Vigano
+// Tp nro:6
+/* Ej nro:5
+Cargar un conjunto de 10 números reales y formar con los valores positivos un vector llamado pos
+ y con los valores negativos un vector llamado nega. Mostrar por pantalla la cantidad de elementos que contiene
+  cada vector y luego cada uno de los vectores. Sólo deben utilizarse dos vectores en el programa: pos y nega.
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+
+    int const TAM = 10;
+    int contPos=0,contNeg=0;
+    float pos[TAM]{};
+    float nega[TAM]{};
+    float num;
+    int i;
+    for(i=0;i<TAM;i++){
+        cout<<"Ingrese un numero: ";
+        cin>>num;
+//CUENTO LA CANTIDAD DE POSITIVOS Y NGATIVOS
+        if(num>0){
+            pos[contPos]=num;
+            contPos++;
+        }
+
+        if (num<0){
+            nega[contNeg]=num;
+            contNeg++;
+
+        }
+    }
+
+    cout << "Cantidad de numeros positivos: " << contPos << endl;
+    cout << "Cantidad de numeros negativos: " << contNeg << endl << endl;
+
+
+    // CON UN IF EVALUO SI HUBO POSITIVOS Y MUESTRO EL VECTOR SI ASI FUERA LO MISMO CON LOS NEGATIVOS , 
+    if(contPos>0){
+    cout << "Vector de positivos: ";
+    for (i=0;i<TAM;i++){
+        if (pos[i]>0){
+            cout<<pos[i]<<" " ;
+        }
+    }
+cout<<endl;
+    }
+    else{
+        cout<<"NO HUBO POSITIVOS"<<endl;
+    }
+
+   
+    if(contNeg>0){
+    cout<<"Vector de negativos: "  ;
+    for (i=0;i<TAM;i++){
+        if (nega[i]<0){
+            cout <<nega[i]<<" ";
+        }
+    }
+cout<<endl;
+    }
+    else{
+        cout<<"NO HUBO NEGATIVOS"<<endl;
+    }
+return 0;
+
+}
