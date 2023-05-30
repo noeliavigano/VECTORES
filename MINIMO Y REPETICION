@@ -1,0 +1,36 @@
+// Nombre: Noelia Vigano
+// Tp nro:6
+/* Ej nro:3
+Hacer un programa donde se carguen 15 números enteros y luego muestre por pantalla el mínimo elemento del vector
+ y además indique cuántas veces se repite el valor mínimo dentro del vector.
+*/
+
+#include <iostream>
+using namespace std;
+int main (){
+int cont=0,i,minimo;
+ int const TAM=15;
+ int vec[TAM]={};
+ cout<<"ingrese una lista de numeros"<< endl;
+
+ for(i=0;i<TAM;i++){
+cin>> vec[i];
+ if(i==0||vec[i]<minimo){
+    minimo=vec[i];
+ }
+ }
+ for(i=0;i<TAM;i++){
+    if(vec[i]==minimo)
+    cont++;
+ }
+
+if(cont==1){
+   cout<<"el valor minimo es " <<minimo<<" y no se repite"<<endl;
+}
+else{
+    cout<<"el valor minimo es " <<minimo<<" y se repite "<<cont<< " veces"<<endl;
+}
+
+return 0;
+
+}
