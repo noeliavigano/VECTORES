@@ -1,0 +1,48 @@
+// Nombre: Noelia Vigano
+// Tp nro:6
+/* Ej nro:4 Se dispone de las ventas de un negocio durante el mes pasado.
+Por cada venta se registró el número de venta, el número de día y el importe de la venta.
+ El fin de la carga de datos se indica con número de venta igual a 0.
+Se pide calcular e informar:
+Por cada día, la recaudación total (sólo de aquellos días que tuvieron recaudación).
+El número de día que más se recaudó en total y cuál fue la recaudación máxima.
+
+*/
+
+#include <iostream>
+using namespace std;
+int main (){
+int const TAM=30;
+float vecDias[TAM]={};
+int numeroDeVenta,numeroDeDia,i;
+float importeDeVenta;
+cout<<"INGRESE NUMERO DE VENTA"<<endl;
+cin>>numeroDeVenta;
+while(numeroDeVenta!=0){
+cout<<"INGRESE NUMERO DE DIA"<<endl;
+cin>>numeroDeDia;
+cout<<"INGRESE IMPORTE DE LA VENTA"<<endl;
+cin>>importeDeVenta;
+vecDias[numeroDeDia-1]+=importeDeVenta;
+cout<<"INGRESE NUMERO DE VENTA"<<endl;
+cin>>numeroDeVenta;
+}
+
+
+float mayorDiaVenta=vecDias[0];
+int diaDeMayorVenta;
+for(i=0;i<TAM;i++){
+    if(vecDias[i]>0){
+        cout<<"la recaudación total del dia " <<i+1<<" fue "<<vecDias[i]<<endl;
+        }
+if(vecDias[i]>mayorDiaVenta){
+        mayorDiaVenta=vecDias[i];
+        diaDeMayorVenta=i;
+
+}
+}
+cout<<" EL DIA DE MAYOR VENTA FUE "<<diaDeMayorVenta+1<<" se recaudo $"<<mayorDiaVenta;
+
+return 0;
+
+}
